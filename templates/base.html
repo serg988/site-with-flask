@@ -1,0 +1,50 @@
+{% extends "bootstrap/base.html" %}
+{% block head %}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+
+{{super()}}
+{% endblock head %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+{% block title %}
+Учебное приложение
+{% endblock title %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+{% block navbar %}
+{% include "_navbar.html" %}
+{% endblock navbar %}
+
+    {% block content %}
+
+    {%with messages = get_flashed_messages(with_categories=true)%}
+    {% if messages%}
+    <div style="margin-left:-2.5rem">
+        <ul>
+            {% for category, message in messages%}
+            <li class="list-group text-center alert alert-{{category}}"> {{message}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% endif %}
+    {% endwith %}
+    {% block sub_content %}
+
+    {% endblock sub_content %}
+    {% block footer %}
+{% include "_footer.html" %}
+{% endblock footer %}
+    {% endblock content %}
+
+
+
+</body>
+</html>

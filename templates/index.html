@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block sub_content %}
+
+<!-- Newsletter -->
+    <section class="bg-primary text-light pt-5 pb-3">
+      <div class="container">
+        <div class="mt-3">
+          <h5 class="mb-3">Дисклеймер:</h5>
+          <p>Контент данного сайта сгенерирован с помощью CHAT-GPT.
+          Цель сайта не информационная, а демонстрационная</p>
+
+      </div>
+    </section>
+
+
+    <!-- Showcase -->
+    <section
+      class=" text-light bg-dark p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
+    >
+      <div class="container">
+        <div class="py-5 d-sm-flex align-items-center justify-content-between">
+          <div>
+            <h1>Стать <span class="text-warning"> Веб-разработчиком </span>, или ...?</h1>
+            <p class="my-4">
+              Python является универсальным инструментом не только для веб-разработки, но и для работы с массивами данных. Его мощные библиотеки, такие как Django и Flask, делают создание веб-приложений более доступным и эффективным. В то же время, Python обладает богатым инструментарием для работы с массивами данных благодаря библиотекам NumPy, Pandas и другим, что позволяет уверенно обрабатывать и анализировать большие объемы информации, в том числе и для веб-приложений, обеспечивая их более умными и персонализированными возможностями.
+            </p>
+
+          </div>
+           <img class="img-fluid w-50 d-none d-sm-block" src="{{url_for('static', filename='showcase.svg')}}" />
+        </div>
+      </div>
+    </section>
+
+<!-- Boxes -->
+    <section class="p-5">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div class="col-md">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <h3 class="card-title mb-3">Python</h3>
+                <p class="card-text">
+                  Python - мощный и универсальный язык программирования, пользующийся популярностью благодаря своей читаемости, простоте синтаксиса и обширной экосистеме библиотек.
+                </p>
+                <a href="https://www.python.org/" class="btn btn-primary" target="_blank">Читать еще</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card bg-secondary text-light">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="bi bi-person-square"></i>
+                </div>
+                <h3 class="card-title mb-3">Flask</h3>
+                <p class="card-text">
+                  Flask - легкий и гибкий фреймворк для веб-разработки на языке Python, обеспечивающий минималистичное API и интуитивно понятную структуру, идеально подходящий для создания веб-приложений.
+                </p>
+                <a href="https://flask.palletsprojects.com/en/3.0.x/" target="_blank" class="btn btn-dark">Читать еще</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-center">
+                <div class="h1 mb-3">
+                  <i class="bi bi-people"></i>
+                </div>
+                <h3 class="card-title mb-3">Django</h3>
+                <p class="card-text">
+                  Django - высокоуровневый фреймворк для веб-разработки на
+                  языке Python, отличающийся встроенными инструментами администрирования,
+                  мощной системой ORM и собственной конвенцией по организации кода,
+                  упрощающей создание масштабируемых и безопасных веб-приложений.
+                </p>
+                <a href="https://www.djangoproject.com/" target="_blank" class="btn btn-primary">Читать еще</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<!-- Learn Sections -->
+<section id="learn" class="p-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md">
+            <img class="img-fluid" src="{{url_for('static', filename='fundamentals.svg')}}" />
+          </div>
+          <div class="col-md p-5">
+            <h2>Изучение основ!</h2>
+            <p>
+             Изучение веб-разработки представляет увлекательное путешествие в мир, где технологии объединяются с творчеством. Этот процесс позволяет создавать не только функциональные и эффективные веб-сайты, но и придавать им уникальный дизайн и пользовательский опыт. Веб-разработка требует постоянного обновления знаний в сферах дизайна, программирования, баз данных и безопасности, что делает её увлекательной и всегда актуальной. Создание интерактивных и динамичных веб-приложений также предоставляет возможность воплощать свои идеи в жизнь, а быстрый темп изменений в этой области гарантирует, что всегда есть что нового узнать и освоить.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="learn" class="py-5 bg-dark text-light">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md p-5">
+            <h2>Изучаем Python!</h2>
+            <p class="lead">
+             Я увлечен Python и его возможностями. Стремлюсь к освоению программирования, и каждый день открываю для себя новые аспекты этого языка. Моя цель - стать опытным разработчиком и применить знания Python в увлекательных проектах.
+            </p>
+            <a href="#" class="btn btn-light mt-3">
+              <i class="bi bi-chevron-right"></i> Читать еще
+            </a>
+          </div>
+          <div class="col-md">
+           <img class="img-fluid" src="https://kinsta.com/wp-content/uploads/2023/05/flask-vs-django-comparison.jpg" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<div class="container">
+    <p class="mt-5"></p>
+</div>
+{% endblock sub_content %}

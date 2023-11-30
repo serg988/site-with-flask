@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block sub_content %}
+
+<div class="container">
+  <div class="m-5"></div>
+
+        <a class="btn btn-outline-dark my-3" style="margin-left: 50%" href="/feedback">Напишите отзыв</a>
+
+    {% for comment in comments|reverse %}
+    <div class="card mb-3">
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{comment.text | safe}}</p>
+      <footer class="blockquote-footer">Написано: <cite title="Source Title">{{comment.name | safe}}</cite></footer>
+    </blockquote>
+    </blockquote>
+  </div>
+</div>
+    
+    
+    {% endfor %}
+</div>
+{% endblock sub_content %}

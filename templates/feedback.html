@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block sub_content %}
+<div class="m-3"></div>
+<h3 class="text-center mt-5">Оставьте отзыв!</h3>
+<h5 class="text-center mt-1">Ну или просто что-то хорошее напишите...</h5>
+<div class="text-center">
+</div>
+<div class="p-5">
+<form method='POST'>
+    <div class="form-group">
+    <label for="name">Имя</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Введите имя">   
+  </div>
+  <div class="form-group">
+    <label for="text">Текст</label>
+    <textarea type="text" class="form-control" id="text" name="text"  placeholder="Напишите отзыв">
+    </textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+{% endblock sub_content %}
