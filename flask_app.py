@@ -1,10 +1,10 @@
 #  source venv/bin/activate
-from flask import Flask, render_template, flash, request, redirect
+from flask import Flask, render_template, flash, request, redirect, url_for
 from flask_bootstrap import Bootstrap
 # from werkzeug.security import generate_password_hash, check_password_hash
 # from flask_ckeditor import CKEditor
 from flask_sqlalchemy import SQLAlchemy
-
+import datetime
 import os
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ app.config['SECRET_KEY'] = os.urandom(24)
 
 SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
     username="root",
-    password="  пароль",
+    password="Mm664856!",
     hostname="localhost",
     databasename="comments",
 )
@@ -33,6 +33,8 @@ class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20))
     text = db.Column(db.String(1000))
+    created_at = db.Column(db.TIMESTAMP,
+                           default=datetime.datetime.utcnow)
 
     # def __repr__(self):
     #     return [self.name, self.text]
@@ -48,6 +50,11 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/modal')
+def modal():
+    return render_template('modal.html')
+
+
 @app.route('/feedbacks')
 def feedbacks():
     comments = Comment.query.all()
@@ -56,12 +63,13 @@ def feedbacks():
     else:
         return render_template("feedbacks.html", comments=None)
 
+
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
     if request.method == "POST":
         if not request.form["name"] or not request.form["text"]:
             flash("Поля не должны быть пустыми.", 'danger')
-            # return render_template("feedback.html")
+            return redirect(url_for('feedbacks'))
         else:
             comment = Comment(
                 name=request.form["name"], text=request.form["text"])
@@ -73,3 +81,5 @@ def feedback():
 
 if (__name__ == '__main__'):
     app.run(debug=True)
+
+# ALTER TABLE comment ADD COLUMN created_at timestamp AFTER text;
